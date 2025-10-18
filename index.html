@@ -60,17 +60,19 @@
         <div class="about-text">
           <h3>Qui suis-je?</h3>
           <p>Bonjour! Je suis un développeur web passionné avec un minimum d'expérience dans la création de sites web et d'applications. J'aime combiner la technique et la créativité pour résoudre des problèmes complexes et créer des expériences utilisateur exceptionnelles.</p>
-          <p>Titulaire d'un diplôme en développement web, j'ai travaillé sur divers projets allant des sites vitrines aux applications web complexes. Ma philosophie est de créer des solutions numériques qui sont à la fois esthétiques et fonctionnelles.</p>
+          <p>Titulaire d'un diplôme en développement web, et actuellement en BUT3 d'informatique, j'ai travaillé sur divers projets allant des sites vitrines aux applications web complexes. Ma philosophie est de créer des solutions numériques qui sont à la fois esthétiques et fonctionnelles.</p>
           <div class="skills">
             <span class="skill-tag">HTML5</span>
             <span class="skill-tag">CSS3</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">Assembly</span>
             <span class="skill-tag">Django</span>
             <span class="skill-tag">DearPy Gui</span>
             <span class="skill-tag">React</span>
             <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">PHP</span>
             <span class="skill-tag">WordPress</span>
             <span class="skill-tag">UI/UX Design</span>
             <span class="skill-tag">Responsive Design</span>
@@ -134,26 +136,26 @@
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <img src="/api/placeholder/400/400" alt="Projet 1" class="portfolio-img">
+          <img src="image/colombo.png" alt="Projet 1" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Site E-commerce</h3>
-            <p>Développement d'un site e-commerce complet avec panier d'achat et paiement en ligne.</p>
+            <h3>Colombo</h3>
+            <p>Developper et maintenir un logiciel de diagnostic des machines d'imagerie dentaire pour une entreprise de santé.</p>
             <a href="#" class="btn">Voir le projet</a>
           </div>
         </div>
         <div class="portfolio-item">
-          <img src="/api/placeholder/400/400" alt="Projet 2" class="portfolio-img">
+          <img src="image/splendor.jpg" alt="Projet 2" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Application Mobile</h3>
-            <p>Une application mobile pour la gestion de tâches avec synchronisation cloud.</p>
+            <h3>Splendor</h3>
+            <p>Developper une aplication pour le jeu splendor en respectant les règles et les mécaniques du jeu.</p>
             <a href="#" class="btn">Voir le projet</a>
           </div>
         </div>
         <div class="portfolio-item">
-          <img src="/api/placeholder/400/400" alt="Projet 3" class="portfolio-img">
+          <img src="image/taquin.png" alt="Projet 3" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Refonte de Site Web</h3>
-            <p>Refonte complète d'un site corporate avec amélioration du SEO et de l'UX.</p>
+            <h3>Taquin</h3>
+            <p>Reconception d'un jeu classique en ligne avec des graphismes modernes et une jouabilité améliorée dans le langage de programmation C</p>
             <a href="#" class="btn">Voir le projet</a>
           </div>
         </div>
@@ -195,29 +197,29 @@
       <div class="testimonials-container">
         <div class="testimonial">
           <div class="testimonial-content">
-            <p>Travailler avec ce développeur a été une expérience formidable. Il a compris nos besoins dès le départ et a livré un site web qui dépasse toutes nos attentes. Son professionnalisme et sa créativité sont incomparables.</p>
+            <p>Excellent travail, très satisfait du résultat. Daouda est un apprenti développeur prometteur. Il a su s'adapter à nos besoins et a livré un produit de qualité.</p>
           </div>
           <div class="testimonial-author">
             <div class="author-img">
               <img src="/api/placeholder/100/100" alt="Client 1">
             </div>
             <div class="author-info">
-              <h4>Marie Dupont</h4>
-              <p>PDG, Entreprise XYZ</p>
+              <h4>Daniel Haleva</h4>
+              <p>Chef de projet, Mon maitre d'apprentissage</p>
             </div>
           </div>
         </div>
         <div class="testimonial">
           <div class="testimonial-content">
-            <p>Notre application mobile a été un grand succès grâce à son expertise technique et sa vision créative. Il a été très réactif tout au long du projet et a proposé des solutions innovantes à nos problèmes.</p>
+            <p>Notre logiciel de diagnostic a été un grand succès grâce à son expertise technique et sa vision créative. Il a été très réactif tout au long du projet et a proposé des solutions innovantes à nos problèmes.</p>
           </div>
           <div class="testimonial-author">
             <div class="author-img">
               <img src="/api/placeholder/100/100" alt="Client 2">
             </div>
             <div class="author-info">
-              <h4>Thomas Martin</h4>
-              <p>Directeur Marketing, StartUp ABC</p>
+              <h4>Paul Maurin</h4>
+              <p>Directeur du service engineering, Carestream Dental</p>
             </div>
           </div>
         </div>
@@ -274,9 +276,49 @@
         <div>
           <div class="contact-form">
             <h3>Envoyez-moi un message</h3>
-            <form id="contactForm">
+            <form id="contactForm" action="#" method="post">
               <div class="form-group">
-                <input type=""text" id="name" name="name" placeholder="Votre nom" required>
-    
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Sujet (optionnel)">
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+              </div>
+              <button type="submit" class="btn">Envoyer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Daouda KONE. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Burger menu toggle
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger?.addEventListener('click', () => {
+      navLinks?.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
+    });
+
+    // Simple demo contact form handler
+    const contactForm = document.getElementById('contactForm');
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Merci — message simulé envoyé.');
+      contactForm.reset();
+    });
+  </script>
 </body>
 </html>
