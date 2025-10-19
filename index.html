@@ -253,7 +253,7 @@
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="contact-text">
-                  Kone.daouda8850@gmail.com
+                 kd.daouda88@gmail.com
                 </div>
               </div>
               <div class="contact-item">
@@ -284,7 +284,7 @@
                 <input type="email" id="email" name="email" placeholder="Votre email" required>
               </div>
               <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Sujet (optionnel)">
+                <input type="text" id="subject" name="subject" placeholder="Sujet" required>
               </div>
               <div class="form-group">
                 <textarea id="message" name="message" placeholder="Votre message" required></textarea>
@@ -303,6 +303,9 @@
     </div>
   </footer>
 
+  <!-- EmailJS (client-side) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
+
   <script>
     // Burger menu toggle
     const burger = document.querySelector('.burger');
@@ -312,13 +315,33 @@
       burger.classList.toggle('toggle');
     });
 
-    // Simple demo contact form handler
-    const contactForm = document.getElementById('contactForm');
-    contactForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Merci — message simulé envoyé.');
-      contactForm.reset();
-    });
+    // Initialise EmailJS (remplace par ta clé publique)
+    emailjs.init('rGQl4zVnYipR1qDVU');
+
+    // Submit unique handler using EmailJS
+    (function () {
+      const contactForm = document.getElementById('contactForm');
+      if (!contactForm) return;
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button[type="submit"]');
+        if (btn) btn.disabled = true;
+
+        emailjs.sendForm('Daoudakone45@', 'template_x3a3fdq', contactForm)
+          .then(() => {
+            alert('Message envoyé ✅');
+            contactForm.reset();
+          })
+          .catch((err) => {
+            console.error('EmailJS error:', err);
+            alert('Erreur envoi, réessaye plus tard.');
+          })
+          .finally(() => {
+            if (btn) btn.disabled = false;
+          });
+      });
+    })();
   </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
- /* Variables */
+/* Variables */
     :root {
       --primary-color: #2563eb;
       --secondary-color: #1e40af;
@@ -7,6 +7,32 @@
       --gray-color: #64748b;
       --success-color: #10b981;
       --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+
+    /* Ou plus spécifiquement pour le message */
+    #message {
+      width: 100%;         /* prend toute la largeur de la colonne */
+      min-height: 250px;   /* hauteur raisonnable */
+      resize: horizontal;  /* redimensionnable horizontalement */
+      border: 1px solid var(--gray-color);
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+    } 
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--gray-color);
+      border-radius: 5px;
+      box-sizing: border-box;
     }
 
     /* Reset */
