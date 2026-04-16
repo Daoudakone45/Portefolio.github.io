@@ -24,40 +24,44 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Contact Form Handling
-const contactForm = document.getElementById('contact-form');
+// Contact Form Handling with EmailJS
+const contactForm = document.getElementById('contact-form') || document.getElementById('contactForm');
 
 if (contactForm) {
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+  if (typeof emailjs !== 'undefined' && emailjs.init) {
+    emailjs.init('rGQl4zVnYipR1qDVU');
+  }
+
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Get form values
-    const formData = new FormData(contactForm);
-    const nom = formData.get('nom') || e.target.querySelector('input[type="text"]').value;
-    const email = formData.get('email') || e.target.querySelector('input[type="email"]').value;
-    const sujet = formData.get('sujet') || e.target.querySelectorAll('input[type="text"]')[1].value;
-    const message = formData.get('message') || e.target.querySelector('textarea').value;
-
-    // Validation simple
-    if (nom && email && sujet && message) {
-      // Simulate sending
-      console.log('Formulaire soumis:', { nom, email, sujet, message });
-
-      // Show success message
-      const submitBtn = e.target.querySelector('button[type="submit"]');
-      const btnText = submitBtn.textContent;
-      submitBtn.textContent = 'Message envoye';
-      submitBtn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
-      submitBtn.classList.add('bg-green-600');
-
-      // Reset after 3 seconds
-      setTimeout(() => {
-        contactForm.reset();
-        submitBtn.textContent = btnText;
-        submitBtn.classList.remove('bg-green-600');
-        submitBtn.classList.add('bg-purple-600', 'hover:bg-purple-700');
-      }, 3000);
+    if (typeof emailjs === 'undefined') {
+      alert('EmailJS n\'est pas chargé. Vérifie le script de la librairie dans index.html.');
+      return;
     }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours...';
+    }
+
+    emailjs.sendForm('Daoudakone45@', 'template_x3a3fdq', contactForm)
+      .then(() => {
+        alert('Message envoyé ✅');
+        contactForm.reset();
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+        alert('Erreur envoi, réessaye plus tard.');
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Envoyer Mon Message';
+        }
+      });
   });
 }
 
